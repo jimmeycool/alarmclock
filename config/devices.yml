@@ -1,0 +1,7 @@
+spi:
+  clk_pin: 14
+  mosi_pin: 12
+
+devices: [
+  
+]
