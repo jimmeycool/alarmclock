@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
-from typing import Any, Generic, TypeVar
 from PIL import ImageDraw
+from typing import Any
 
 class View(ABC):
 
@@ -25,4 +25,3 @@ class View(ABC):
         config (Any, optional): The configuration associated with this view. Defaults to None.
     """
     pass
-  
