@@ -1,39 +1,36 @@
 - !ScreenConfig
-  width: 128
-  height: 128
-  device: 'ssd1351'
+  display: ssd1351
   location: [0,0]
   name: "upper left"
-  reset_pin: 4
-  cs_pin: 21
-  dc_pin: 26
+  port: 0
+  gpio_dc: 6
+  gpio_reset: 26
+  gpio_chip_select: 8
 
 - !ScreenConfig
-  width: 128
-  height: 128
-  device: 'ssd1351'
+  display: ssd1351
   location: [1,0]
   name: "upper right"
-  reset_pin: 5
-  cs_pin: 22
-  dc_pin: 27
+  port: 1
+  gpio_dc: 5
+  gpio_reset: 27
+  gpio_chip_select: 18
 
 - !ScreenConfig
-  width: 128
-  height: 128
-  device: 'ssd1351'
+  display: ssd1351
   location: [0,1]
   name: "bottom left"
-  reset_pin: 6
-  cs_pin: 23
-  dc_pin: 28
+  port: 1
+  gpio_dc: 5
+  gpio_reset: 28
+  gpio_chip_select: 17
+
 
 - !ScreenConfig
-  width: 128
-  height: 128
-  device: 'ssd1351'
+  display: ssd1351
   location: [1,1]
   name: "bottom right"
-  reset_pin: 10
-  cs_pin: 24
-  dc_pin: 29
+  port: 1
+  gpio_dc: 5
+  gpio_reset: 29
+  gpio_chip_select: 16
