@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from PIL import ImageDraw
 from typing import Any
 
-class View(ABC):
+class ViewBase(ABC):
 
   def __init__(self, config: Any = None) -> None:
     """
