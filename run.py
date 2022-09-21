@@ -1,6 +1,6 @@
 from view_module_loader import load
 from PIL import Image, ImageDraw
-from engine.mocks.pygame_display_adapter import PyGameDisplayAdapter
+from engine.adapters.pygame_display_adapter import PyGameDisplayAdapter
 import time
 
 def main():
@@ -8,7 +8,7 @@ def main():
   display_adapter = PyGameDisplayAdapter(dimensions)
   
   # Specify the name of the view module you want to run here!
-  view_module = load("hours_view")
+  view_module = load("demo_view")
 
   while True:
     # set up a new image for this tick
