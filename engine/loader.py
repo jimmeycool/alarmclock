@@ -18,7 +18,7 @@ def load_screens(configs: List[ScreenConfig]) -> Dict[Tuple[int, int], device]:
 
 def _load_screen(screen_config: ScreenConfig) -> device:
     """
-    Creates a ready connectio to te given screen with the given SPI 
+    Creates a ready connection to te given screen with the given SPI 
     config. Only supports SDD1351 displays at the moment
 
     Args:
