@@ -1,7 +1,39 @@
-spi:
-  clk_pin: 14
-  mosi_pin: 12
+- !ScreenConfig
+  width: 128
+  height: 128
+  device: 'ssd1351'
+  location: [0,0]
+  name: "upper left"
+  reset_pin: 4
+  cs_pin: 21
+  dc_pin: 26
 
-devices: [
-  
-]
+- !ScreenConfig
+  width: 128
+  height: 128
+  device: 'ssd1351'
+  location: [1,0]
+  name: "upper right"
+  reset_pin: 5
+  cs_pin: 22
+  dc_pin: 27
+
+- !ScreenConfig
+  width: 128
+  height: 128
+  device: 'ssd1351'
+  location: [0,1]
+  name: "bottom left"
+  reset_pin: 6
+  cs_pin: 23
+  dc_pin: 28
+
+- !ScreenConfig
+  width: 128
+  height: 128
+  device: 'ssd1351'
+  location: [1,1]
+  name: "bottom right"
+  reset_pin: 10
+  cs_pin: 24
+  dc_pin: 29
