@@ -5,7 +5,7 @@ from abc import abstractmethod
 from dataclasses import dataclass
 from typing import Any
 
-from controller import Controller
+from controller import ControllerBase
 
 @dataclass
 class AsyncModel:
@@ -13,7 +13,7 @@ class AsyncModel:
   is_error: bool
   data: Any
 
-class AsyncController(Controller):
+class AsyncControllerBase(ControllerBase):
 
   def __init__(self, config: Any) -> None:
     """
