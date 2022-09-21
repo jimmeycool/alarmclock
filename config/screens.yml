@@ -1,0 +1,3 @@
+- !ScreenConfig
+  location: [0,0]
+  view_module: demo_view

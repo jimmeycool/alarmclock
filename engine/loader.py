@@ -1,10 +1,20 @@
-from typing import Dict, List, Tuple
+import importlib
+from typing import Any, Dict, List, Tuple
 from luma.core.interface.serial import gpio_cs_spi
 from luma.oled.device import device, ssd1351
 
-from config.models import ScreenConfig
+from config.models import DeviceConfig, ScreenConfig
+from components import ViewModule
 
-def load_screens(configs: List[ScreenConfig]) -> Dict[Tuple[int, int], device]:
+
+def load(device_configs: List[DeviceConfig], screen_configs: List[ScreenConfig]):
+    devices = load_devices(device_configs)
+    screens = load_screens(screen_configs)
+
+def load_screens(screen_configs: List[ScreenConfig]):
+    pass
+
+def load_devices(device_configs: List[DeviceConfig]) -> Dict[Tuple[int, int], device]:
     """
     Creates a mapping of locations to active screen devices
 
@@ -14,9 +24,9 @@ def load_screens(configs: List[ScreenConfig]) -> Dict[Tuple[int, int], device]:
     Returns:
         Dict[Tuple[int, int], device]: Mapping of location (x,y) to screen (device)
     """
-    return {config.location:_load_screen(config) for config in configs}
+    return {config.location:_load_device(config) for config in device_configs}
 
-def _load_screen(screen_config: ScreenConfig) -> device:
+def _load_device(screen_config: DeviceConfig) -> device:
     """
     Creates a ready connection to te given screen with the given SPI 
     config. Only supports SDD1351 displays at the moment
@@ -37,3 +47,16 @@ def _load_screen(screen_config: ScreenConfig) -> device:
 
     return ssd1351(serial_interface=spi)
 
+def load_view_module(name: str, config: Any = None) -> ViewModule:
+  """
+  Dynamically loads a view module by name.
+
+  Args:
+      name (str): The name of the view module to load.
+      config (Any, optional): Configuraion for the view module. Defaults to None.
+
+  Returns:
+      ViewModule: The dynamically loaded view module.
+  """
+  module = importlib.import_module(f"view_modules.{name}")
+  return ViewModule(module.Controller(config), module.View(config), config)

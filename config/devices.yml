@@ -1,4 +1,4 @@
-- !ScreenConfig
+- !DeviceConfig
   display: ssd1351
   location: [0,0]
   name: "upper left"
@@ -7,7 +7,7 @@
   gpio_reset: 26
   gpio_chip_select: 8
 
-- !ScreenConfig
+- !DeviceConfig
   display: ssd1351
   location: [1,0]
   name: "upper right"
@@ -16,7 +16,7 @@
   gpio_reset: 27
   gpio_chip_select: 18
 
-- !ScreenConfig
+- !DeviceConfig
   display: ssd1351
   location: [0,1]
   name: "bottom left"
@@ -25,8 +25,7 @@
   gpio_reset: 28
   gpio_chip_select: 17
 
-
-- !ScreenConfig
+- !DeviceConfig
   display: ssd1351
   location: [1,1]
   name: "bottom right"
