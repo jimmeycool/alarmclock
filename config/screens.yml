@@ -1,4 +1,4 @@
 - !ScreenConfig
   location: [0,0]
-  view_module: hours_view
+  view_module: clock_view
   config: 'I hate this!'
