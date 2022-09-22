@@ -50,4 +50,3 @@ class SSD1351DisplayAdapter(DisplayAdapter):
         """
         r, g, b = image.split()
         return Image.merge('RGB', (b, g, r))
-
