@@ -4,7 +4,7 @@ from typing import Tuple, Any
 from PIL import Image, ImageDraw
 
 from alarmclock.engine.components import ViewBase
-from alarmclock.view_modules.utilities import BLACK, get_arial_font, get_vardana_font
+from alarmclock.view_modules.utilities import BLACK, get_arial_font, get_verdana_font
 
 
 class View(ViewBase):
@@ -14,7 +14,7 @@ class View(ViewBase):
 
         # don't reload fonts on each render.
         self.ARIAL15 = get_arial_font(15)
-        self.VARDANA30 = get_vardana_font(30)
+        self.VARDANA30 = get_verdana_font(30)
 
     def draw(self, dimensions: Tuple[int, int], model: Any = None) -> Image:
         center = tuple(d//2 for d in dimensions)
