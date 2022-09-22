@@ -1,28 +1,17 @@
-from view_module_loader import load
-from PIL import Image, ImageDraw
-from engine.adapters.pygame_display_adapter import PyGameDisplayAdapter
 import time
+from config import device_configs, screen_configs
+from alarmclock import load
 
 def main():
-  dimensions = (128, 128)
-  display_adapter = PyGameDisplayAdapter(dimensions)
-  
-  # Specify the name of the view module you want to run here!
-  view_module = load("demo_view")
+  render_modules = load(device_configs, screen_configs)
 
   while True:
-    # set up a new image for this tick
-    image = Image.new("RGB", dimensions, (0, 0, 0))
+    _ = [mod.execute() for mod in render_modules]
+    time.sleep(0.01)
 
-    # Update controller and update image with the view
-    model = view_module.controller.update()
-    view_module.view.draw(ImageDraw.Draw(image), model)
-
-    # Push update to display
-    display_adapter.update(image)
-
-    # Sleep  till next tick
-    time.sleep(.01)
 
 if __name__ == "__main__":
-  main()
+  try:
+    main()
+  except KeyboardInterrupt:
+    pass

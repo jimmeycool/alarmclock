@@ -1,36 +1,40 @@
-- !ScreenConfig
-  display: ssd1351
+- !DeviceConfig
+  display: pygame
   location: [0,0]
   name: "upper left"
-  port: 0
-  gpio_dc: 6
-  gpio_reset: 26
-  gpio_chip_select: 8
 
-- !ScreenConfig
-  display: ssd1351
-  location: [1,0]
-  name: "upper right"
-  port: 1
-  gpio_dc: 5
-  gpio_reset: 27
-  gpio_chip_select: 18
+# - !DeviceConfig
+#   display: ssd1351
+#   location: [0,0]
+#   name: "upper left"
+#   port: 0
+#   gpio_dc: 6
+#   gpio_reset: 26
+#   gpio_chip_select: 8
 
-- !ScreenConfig
-  display: ssd1351
-  location: [0,1]
-  name: "bottom left"
-  port: 1
-  gpio_dc: 5
-  gpio_reset: 28
-  gpio_chip_select: 17
+# - !DeviceConfig
+#   display: ssd1351
+#   location: [1,0]
+#   name: "upper right"
+#   port: 1
+#   gpio_dc: 5
+#   gpio_reset: 27
+#   gpio_chip_select: 18
 
+# - !DeviceConfig
+#   display: ssd1351
+#   location: [0,1]
+#   name: "bottom left"
+#   port: 1
+#   gpio_dc: 5
+#   gpio_reset: 28
+#   gpio_chip_select: 17
 
-- !ScreenConfig
-  display: ssd1351
-  location: [1,1]
-  name: "bottom right"
-  port: 1
-  gpio_dc: 5
-  gpio_reset: 29
-  gpio_chip_select: 16
+# - !DeviceConfig
+#   display: ssd1351
+#   location: [1,1]
+#   name: "bottom right"
+#   port: 1
+#   gpio_dc: 5
+#   gpio_reset: 29
+#   gpio_chip_select: 16
