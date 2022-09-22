@@ -5,7 +5,7 @@ from typing import Any, Tuple
 class View(ViewBase):
 
   def draw(self, dimensions: Tuple[int, int], model: Any = None) -> Image:
-    image = Image.new("RGB", self.dimensions, (0, 0, 0))
+    image = Image.new("RGB", dimensions, (0, 0, 0))
     draw = ImageDraw.Draw(image)
     draw.rectangle([(0, 0), (128, 128)], fill=model)
     return image
