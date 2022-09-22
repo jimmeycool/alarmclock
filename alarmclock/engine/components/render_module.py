@@ -1,5 +1,6 @@
-from PIL import Image, ImageDraw
+from PIL import Image
 
+from .image_cache import ImageCache
 from .view_module import ViewModule
 from ..adapters import DisplayAdapter
 
@@ -14,6 +15,7 @@ class RenderModule:
             view_module (ViewModule): View Module to render
         """
         self.display_adapter = display_adapter
+        self.image_cache = ImageCache()
         self.view_module = view_module
         self._dimensions = display_adapter.dimensions
 
@@ -27,6 +29,5 @@ class RenderModule:
 
         model = self.view_module.controller.update()
         image = self.view_module.view.draw(self._dimensions, model)
-        self.display_adapter.update(image)
-
-
+        if self.image_cache.cache_if_changed(image):
+            self.display_adapter.update(image)
