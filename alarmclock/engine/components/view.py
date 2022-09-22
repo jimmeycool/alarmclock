@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
-from PIL import ImageDraw
-from typing import Any
+from PIL import Image
+from typing import Any, Tuple
 
 class ViewBase(ABC):
 
@@ -15,7 +15,7 @@ class ViewBase(ABC):
     self.config = config
 
   @abstractmethod
-  def draw(self, draw: ImageDraw, model: Any = None) -> None:
+  def draw(self, dimensions: Tuple[int, int], model: Any = None) -> Image:
     """
     Produces the current view as an image via the drawing interface.
 
