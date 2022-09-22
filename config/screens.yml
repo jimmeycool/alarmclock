@@ -7,3 +7,13 @@
   location: [1,0]
   view_module: hours_view
   config: 'I hate this!'
+
+- !ScreenConfig
+  location: [0,1]
+  view_module: hours_view
+  config: 'I hate this!'
+
+- !ScreenConfig
+  location: [1,1]
+  view_module: hours_view
+  config: 'I hate this!'
