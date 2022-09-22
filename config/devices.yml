@@ -1,21 +1,21 @@
-- !DeviceConfig
-  display: pygame
-  location: [0,0]
-  name: "upper left"
+# - !DeviceConfig
+#   display: pygame
+#   location: [0,0]
+#   name: "upper left"
 
 # - !DeviceConfig
 #   display: pygame
 #   location: [1,0]
 #   name: "upper right"
 
-# - !DeviceConfig
-#   display: ssd1351
-#   location: [0,0]
-#   name: "upper left"
-#   port: 0
-#   gpio_dc: 6
-#   gpio_reset: 26
-#   gpio_chip_select: 8
+- !DeviceConfig
+  display: ssd1351
+  location: [0,0]
+  name: "upper left"
+  port: 0
+  gpio_dc: 6
+  gpio_reset: 26
+  gpio_chip_select: 8
 
 # - !DeviceConfig
 #   display: ssd1351
