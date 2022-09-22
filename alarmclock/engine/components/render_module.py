@@ -24,11 +24,9 @@ class RenderModule:
         Returns:
             Image: Latest image to return 
         """
-        image = Image.new("RGB", self._dimensions, (0, 0, 0))
+
         model = self.view_module.controller.update()
-
-        self.view_module.view.draw(ImageDraw.Draw(image), model)
-
+        image = self.view_module.view.draw(self._dimensions, model)
         self.display_adapter.update(image)
 
 
