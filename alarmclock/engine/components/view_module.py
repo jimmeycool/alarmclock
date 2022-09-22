@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 
-from components import ControllerBase, ViewBase
+from .controller import ControllerBase
+from .view import ViewBase
 
 @dataclass
 class ViewModule:

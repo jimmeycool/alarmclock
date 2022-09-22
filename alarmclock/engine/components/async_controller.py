@@ -5,7 +5,7 @@ from abc import abstractmethod
 from dataclasses import dataclass
 from typing import Any
 
-from components import ControllerBase
+from .controller import ControllerBase
 
 @dataclass
 class AsyncModel:

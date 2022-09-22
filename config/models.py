@@ -5,7 +5,15 @@ class DeviceConfig(yaml.YAMLObject):
     yaml_loader = yaml.UnsafeLoader
     yaml_tag = u'!DeviceConfig'
 
-    def __init__(self, location: Tuple[int, int], name: str, display: str, gpio_reset: int, gpio_chip_select: int, gpio_dc: str, port: int):
+    def __init__(
+        self,
+        location: Tuple[int, int],
+        name: str,
+        display: str,
+        gpio_reset: int = None,
+        gpio_chip_select: int = None,
+        gpio_dc: str = None,
+        port: int = None):
         """
         Config class for a screen, define how we are going to connect to it and
         other metadata
