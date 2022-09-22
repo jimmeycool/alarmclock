@@ -2,3 +2,8 @@
   location: [0,0]
   view_module: hours_view
   config: 'I hate this!'
+
+- !ScreenConfig
+  location: [1,0]
+  view_module: demo_view
+  config: 'I hate this!'

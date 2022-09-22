@@ -1,5 +1,5 @@
 import importlib
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List
 
 from config import DeviceConfig, ScreenConfig
 from .components import ViewModule, RenderModule
@@ -34,8 +34,7 @@ def _load_adapter(config: DeviceConfig) -> DisplayAdapter:
     """
 
     if config.display == 'pygame':
-        # Use default size for now
-        return PyGameDisplayAdapter((128, 128))
+        return PyGameDisplayAdapter(config)
     
     if config.display == 'ssd1351':
         return SSD1351DisplayAdapter(config)
