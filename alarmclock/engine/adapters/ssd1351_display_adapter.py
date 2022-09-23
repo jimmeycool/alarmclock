@@ -35,4 +35,18 @@ class SSD1351DisplayAdapter(DisplayAdapter):
         Args:
             image (Image): Image to display
         """
+        image = self.preprocess(image)
         self.device.display(image)
+
+    def preprocess(image: Image) -> Image:
+        """
+        Adjusts an image to be compatible with lumas ssd1351 device.
+
+        Args:
+            image (Image): The image to preprocess.
+
+        Returns:
+            Image: New preprocessed image.
+        """
+        r, g, b = image.split()
+        return Image.merge('RGB', (b, g, r))
