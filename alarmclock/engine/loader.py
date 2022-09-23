@@ -54,6 +54,10 @@ def _load_renderer(adapters: Dict[str, DisplayAdapter], screen_config: ScreenCon
     """
     view_module = _load_view_module(screen_config.view_module, screen_config.config)
     display_adapter = adapters.get(str(screen_config.location))
+
+    if not display_adapter:
+        raise Exception(f"Unable to find a display adapter for position {screen_config.location}")
+
     return RenderModule(display_adapter, view_module)
 
 def _load_view_module(name: str, config: Any = None) -> ViewModule:
@@ -62,7 +66,7 @@ def _load_view_module(name: str, config: Any = None) -> ViewModule:
 
   Args:
       name (str): The name of the view module to load.
-      config (Any, optional): Configuraion for the view module. Defaults to None.
+      config (Any, optional): Configuration for the view module. Defaults to None.
 
   Returns:
       ViewModule: The dynamically loaded view module.

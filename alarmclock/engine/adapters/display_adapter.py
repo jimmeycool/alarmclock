@@ -23,3 +23,10 @@ class DisplayAdapter(ABC):
         image (Image): The image to be displayed.
     """
     pass
+
+  def cleanup():
+    """
+    Perform any cleanup that is needed if we need
+    to end connection
+    """
+    pass
