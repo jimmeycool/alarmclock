@@ -21,8 +21,8 @@ class SSD1351DisplayAdapter(DisplayAdapter):
         
         spi = gpio_cs_spi(
             port=device_config.port,
-            gpio_cs=device_config.gpio_chip_select,
-            gpio_dc=device_config.gpio_dc,
+            gpio_CS=device_config.gpio_chip_select,
+            gpio_DC=device_config.gpio_dc,
             gpio_RST= device_config.gpio_reset
         )
 

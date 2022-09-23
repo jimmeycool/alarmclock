@@ -1,36 +1,36 @@
-- !ScreenConfig
-  location: [0,0]
-  view_module: time_view
-  config:
-    time_part: hour
-
-- !ScreenConfig
-  location: [1,0]
-  view_module: time_view
-  config:
-    time_part: minute
-
-
 # - !ScreenConfig
 #   location: [0,0]
-#   view_module: fade_in_view
+#   view_module: time_view
 #   config:
-#     color: [242, 80, 34]
+#     time_part: hour
 
 # - !ScreenConfig
 #   location: [1,0]
-#   view_module: fade_in_view
+#   view_module: time_view
 #   config:
-#     color: [127, 186, 0]
+#     time_part: minute
 
-# - !ScreenConfig
-#   location: [0,1]
-#   view_module: fade_in_view
-#   config:
-#     color: [0, 164, 239]
 
-# - !ScreenConfig
-#   location: [1,1]
-#   view_module: fade_in_view
-#   config:
-#     color: [255, 185, 0]
+- !ScreenConfig
+  location: [0,0]
+  view_module: fade_in_view
+  config:
+    color: [242, 80, 34]
+
+- !ScreenConfig
+  location: [1,0]
+  view_module: fade_in_view
+  config:
+    color: [127, 186, 0]
+
+- !ScreenConfig
+  location: [0,1]
+  view_module: fade_in_view
+  config:
+    color: [0, 164, 239]
+
+- !ScreenConfig
+  location: [1,1]
+  view_module: fade_in_view
+  config:
+    color: [255, 185, 0]
