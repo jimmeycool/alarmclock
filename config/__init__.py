@@ -2,7 +2,7 @@ import os
 import yaml
 from typing import List
 
-from .models import DeviceConfig, ScreenConfig
+from .models import DeviceConfig, ScreenConfig, ModuleConfig
 
 device_configs: List[DeviceConfig]
 '''
