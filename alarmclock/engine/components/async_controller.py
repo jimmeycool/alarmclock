@@ -27,7 +27,7 @@ class AsyncControllerBase(ControllerBase):
     self.model = AsyncModel(True, False, None)
 
   def due_for_refresh(self) -> bool:
-    return time.time() - self.last_refresh_time >= self.config.refresh_interval_seconds
+    return time.time() - self.last_refresh_time >= self.config["refresh_interval_seconds"]
 
   def update(self) -> Any:
     if self.last_refresh_time is None or self.due_for_refresh():
