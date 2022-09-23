@@ -21,9 +21,8 @@
       config:
         color: [242, 80, 34]
     - !ModuleConfig
-      name: time_view
-      config:
-        time_part: hour
+      name: clock_view
+      config: "None"
 
 - !ScreenConfig
   location: [1,0]
@@ -35,9 +34,9 @@
       config:
         color: [127, 186, 0]
     - !ModuleConfig
-      name: time_view
+      name: weather_view
       config:
-        time_part: minute
+        refresh_interval_seconds: 5
 
 - !ScreenConfig
   location: [0,1]
@@ -49,9 +48,9 @@
       config:
         color: [0, 164, 239]
     - !ModuleConfig
-      name: time_view
+      name: chart_view
       config:
-        time_part: hour
+        refresh_interval_seconds: 5
 
 - !ScreenConfig
   location: [1,1]
@@ -63,6 +62,6 @@
       config:
         color: [255, 185, 0]
     - !ModuleConfig
-      name: time_view
+      name: chart_view
       config:
-        time_part: minute
+        refresh_interval_seconds: 5
