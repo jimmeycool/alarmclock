@@ -1,8 +1,8 @@
 import importlib
 from typing import Any, Dict, List
 
-from config import DeviceConfig, ScreenConfig
-from .components import ViewModule, RenderModule
+from config import DeviceConfig, ScreenConfig, ModuleConfig
+from .components import ViewModule, RenderModule, ViewContainer
 from .adapters import DisplayAdapter, PyGameDisplayAdapter, SSD1351DisplayAdapter
 
 
@@ -52,13 +52,26 @@ def _load_renderer(adapters: Dict[str, DisplayAdapter], screen_config: ScreenCon
     Returns:
         RenderModule: Active render object for the screen
     """
-    view_module = _load_view_module(screen_config.view_module, screen_config.config)
+    view_containers = [_load_view_container(config) for config in screen_config.view_modules]
     display_adapter = adapters.get(str(screen_config.location))
 
     if not display_adapter:
         raise Exception(f"Unable to find a display adapter for position {screen_config.location}")
 
-    return RenderModule(display_adapter, view_module)
+    return RenderModule(display_adapter, view_containers)
+
+def _load_view_container(module_config: ModuleConfig) -> ViewContainer:
+    """
+    Loads the view container for the given config
+
+    Args:
+        module_config (ScreenConfig): Config for the view container
+
+    Returns:
+        ViewContainer: View container
+    """
+    view_module = _load_view_module(module_config.name, module_config.config)
+    return ViewContainer(module_config, view_module)
 
 def _load_view_module(name: str, config: Any = None) -> ViewModule:
   """
