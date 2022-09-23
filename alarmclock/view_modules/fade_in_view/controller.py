@@ -1,9 +1,14 @@
+from dataclasses import dataclass
 from typing import Any
 import timeit
 from alarmclock.engine.components import ControllerBase
 
+@dataclass
+class Model:
+  percent_progress: float
+
 class Controller(ControllerBase):
-  fade_duration = 1
+  fade_duration = 3
 
   def __init__(self, config: Any = None) -> None:
     super().__init__(config)
@@ -12,9 +17,5 @@ class Controller(ControllerBase):
 
   def update(self) -> Any:
     elasped_time = timeit.default_timer() - self.start_time
-    if (elasped_time < self.fade_duration):
-      # interpolate from black to target color
-      ratio = elasped_time / self.fade_duration
-      return tuple([int(ratio * value) for value in self.color])
-
-    return self.color
+    percent_progress = min(elasped_time / self.fade_duration, 1)
+    return Model(percent_progress)
