@@ -1,0 +1,11 @@
+[Unit]
+Description=Alarm Clock
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=~/repos/alarmclock/startup/startup.sh
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
