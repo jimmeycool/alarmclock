@@ -1,3 +1,4 @@
+from datetime import datetime, timedelta
 import math
 from random import random
 from alarmclock.engine.components import ViewBase
@@ -7,6 +8,9 @@ from typing import Any, Tuple
 import numpy as np
 import scipy as sp
 from scipy.interpolate import interp1d
+from dateutil import parser
+
+from alarmclock.view_modules.utilities import get_arial_font
 
 class View(ViewBase):
 
@@ -33,6 +37,16 @@ class View(ViewBase):
         dimensions[1],
         end,
         dimensions[1] - value
-      ), fill="blue")
-    
+      ), fill="red")
+
+    font = get_arial_font(10)
+    draw.multiline_text((5, 5), f"High: {max(y)}°F\nLow: {min(y)}°F", font=font)
+
+    font = get_arial_font(8)
+    time = datetime.now()
+    for i in range(0, 4):
+      hour_str = f"{time.strftime('%I%p')}"
+      draw.text(((128 / 4) * i, 110), hour_str, font=font)
+      time = time + timedelta(hours=6)
+
     return image
