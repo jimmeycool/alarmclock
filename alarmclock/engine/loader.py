@@ -73,8 +73,6 @@ def _load_view_container(module_config: ModuleConfig) -> ViewContainer:
     view_module = _load_view_module(module_config.name, module_config.config)
     return ViewContainer(module_config, view_module)
 
-
-
 def _load_view_module(name: str, config: Any = None) -> ViewModule:
   """
   Dynamically loads a view module by name.
