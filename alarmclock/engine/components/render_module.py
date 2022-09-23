@@ -31,3 +31,9 @@ class RenderModule:
         image = self.view_module.view.draw(self._dimensions, model)
         if self.image_cache.cache_if_changed(image):
             self.display_adapter.update(image)
+
+    def cleanup(self):
+        """
+        Perform any cleanup that is needed
+        """
+        self.display_adapter.cleanup()

@@ -15,11 +15,18 @@ class DisplayAdapter(ABC):
     self.dimensions = dimensions
 
   @abstractmethod
-  def  update(self, image: Image) -> None:
+  def update(self, image: Image) -> None:
     """
     Pushes the given image to the display.
 
     Args:
         image (Image): The image to be displayed.
+    """
+    pass
+
+  def cleanup(self):
+    """
+    Perform any cleanup that is needed if we need
+    to end connection
     """
     pass
